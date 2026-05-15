@@ -99,10 +99,10 @@ code-battle/
 ![admin creates invite links](invites.png)
 ![choose_display_name](display_name.png)
 ![judge](judge.png)
-![judge]('Screenshot 2026-05-15 at 15-21-06 Code Battle.png')
-![judge]('Screenshot 2026-05-15 at 15-22-19 Code Battle.png')
-![judge]('Screenshot 2026-05-15 at 15-24-56 Code Battle.png')
-![judge]('Screenshot 2026-05-15 at 15-25-41 Code Battle.png')
-![judge]('Screenshot 2026-05-15 at 15-26-10 Code Battle.png')
+![a]('Screenshot 2026-05-15 at 15-21-06 Code Battle'.png)
+![b]('Screenshot 2026-05-15 at 15-22-19 Code Battle'.png)
+![b]('Screenshot 2026-05-15 at 15-24-56 Code Battle'.png)
+![d]('Screenshot 2026-05-15 at 15-25-41 Code Battle'.png)
+![e]('Screenshot 2026-05-15 at 15-26-10 Code Battle'.png)
 
 
