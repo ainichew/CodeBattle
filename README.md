@@ -70,35 +70,39 @@ The whole thing — from creating the contest to declaring a winner — can happ
 | **Node.js** | Runtime. Handles concurrent WebSocket connections efficiently with its event-loop model — important when broadcasting timer ticks to many clients every second. |
 | **Express** | HTTP server scaffolding. Minimal role — creates the server that Socket.IO attaches to, and sets CORS headers. No REST routes are defined; all logic flows through WebSocket events. |
 | **Socket.IO Server** | The core of the backend. Manages rooms (one per contest), event routing, acknowledgement callbacks, and broadcasting. Every contest runs in its own named room; `io.to(contestId).emit(...)` scopes all broadcasts correctly. |
-| **In-memory store (`contests{}`)** | All contest state — code, votes, chat, timer, settings — lives in a plain JavaScript object. No database, no serialisation overhead. Chosen deliberately: contests are ephemeral sessions, not records. |
 
 ---
 
 ## 🚀 Installation
-
-### Prerequisites
-- Node.js 18+
+### 1. Prerequisites
+- [Node.js](https://nodejs.org/) (v18+)
 - npm
 
-### Backend
-
+### 2. Installation
 ```bash
-# From the project root
-npm install express socket.io cors
-node server.js
-# Server runs on http://localhost:3001
+# Install backend dependencies
+cd backend && npm install
+
+# Install frontend dependencies
+cd ../frontend && npm install
 ```
 
-### Frontend
+### 3. Running Locally
+You need **two terminals** running simultaneously:
 
+**Terminal 1 (Backend)**
 ```bash
-# From the frontend directory (where vite.config.js lives)
-npm install
+cd backend
+npm start
+```
+
+**Terminal 2 (Frontend)**
+```bash
+cd frontend
 npm run dev
-# App runs on http://localhost:5173
 ```
 
-The Vite proxy handles routing — no additional CORS configuration needed.
+Visit **http://localhost:5173** to start.
 
 ---
 

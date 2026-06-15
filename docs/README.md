@@ -37,7 +37,7 @@ This produced the `StateEffect` / `StateField` / `Decoration` pattern that becam
 ## Key Review Points and Decisions Made
 
 **In-memory state over a database**
-Reviewed and confirmed. Contests are sessions, not records. The cost of adding Redis or Postgres — connection overhead, serialisation, failure modes — was not justified by any requirement. If persistence matters in a future version, Redis pub/sub drops in cleanly.
+Reviewed and confirmed. All contest state — code, votes, chat, timer, settings — lives in a plain JavaScript object. No database, no serialisation overhead. Chosen deliberately: contests are ephemeral sessions, not records. The cost of adding Redis or Postgres — connection overhead, serialisation, failure modes — was not justified by any requirement. If persistence matters in a future version, Redis pub/sub drops in cleanly. 
 
 **Server-authoritative state**
 Every mutation goes to the server first. The server broadcasts the result. Clients never update their own state speculatively. This eliminated an entire class of sync bugs at the cost of one extra network hop — a good tradeoff for a correctness-critical feature like a timer.
